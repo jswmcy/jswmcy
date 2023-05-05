@@ -2,7 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "微软黑体";
+    font-family: "微软雅黑";
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -42,13 +42,13 @@ textarea {
 
 
 .inner-center {
-    width: 100%;
+    width: 1000px;
     margin: 0 auto;
  
 }
 
 .main {
-    padding-top: 1%;
+    padding-top: 5%;
     min-height: 100%;
    
 }
@@ -92,8 +92,6 @@ textarea {
 }
 .search-section {
     position: relative;
-    width:100%;
-    height:100%;
     display: flex;
 }
 .search-left {
@@ -183,6 +181,9 @@ textarea {
     line-height: 34px;
     padding-left: 15px;
 }
+.result-item.active {
+    background: #F0F0F0;
+}
 .result-item:hover {
     background-color: #eee;
     cursor: pointer;
@@ -225,15 +226,22 @@ textarea {
     width: 123px;
     height: 54px;
     line-height: 26px;
-    background: url("./img/search.png") #1890ff 48px center no-repeat;
+    /* background: url("./img/search.png") #1890ff 48px center no-repeat; */
+    background-color: #1890FF;
+    /* background-image: url("./img/search.png"); 
+    background-size: 48px; */
+    background-repeat: no-repeat;
+    background-position: center;
     -webkit-background-size: 35px 35px;
     background-size: 35px 35px;
     color: #fff;
     font-size: 18px;
+    font-weight: 500;
     text-align: center;
     font-family: Roboto;
     border: 1px solid #1890ff;
     cursor: pointer;
+    background: linear-gradient(90deg,#1890FF,#455bfb);
 }
 
 /* 搜索框 end */
@@ -249,8 +257,8 @@ textarea {
 /*-----------------------------简洁版样式定义- 开始---------------------------------------------------*/
 
 .jj-list {
-    width: 100%;
-    float: center;
+    width: 33.33%;
+    float: left;
     margin-bottom: 30px;
     padding-right: 16px;
 }
@@ -258,39 +266,70 @@ textarea {
     padding-right: 0;
 }
 .jj-list-tit {
-    font-size: 26px;
-    float: center;
+    font-size: 16px;
     line-height: 25px;
     color: rgba(49, 70, 89, 1);
-    font-weight: normal;
+    font-weight: bold;
 }
 .jj-list-con {
     overflow: hidden;
-    margin: 5 auto;
-    font:normal;
+    margin: 0 auto;
 
 }
 .jj-list-con li {
     box-sizing: border-box; /*以IE盒子模型的width为标准*/
-    padding: 5px 5px; /*设置div的内边距*/
+    padding: 1px 1px; /*设置div的内边距*/
     width: 33.33%; /*div等分成4部分*/
     float: left;
+    transform-origin: center top;
 }
 
+.jj-list-con li:hover {
+    animation: swing 2s linear 0s 1 forwards
+}
+@keyframes swing {
+    0%, 100% {
+        transform: perspective(200px) rotateX(0);
+    }
+    20% {
+        transform: perspective(200px) rotateX(-45deg);
+    }
+    40% {
+        transform: perspective(200px) rotateX(45deg);
+    }
+    50% {
+        transform: perspective(200px) rotateX(-25deg);
+    }
+    60% {
+        transform: perspective(200px) rotateX(25deg);
+    }
+    70% {
+        transform: perspective(200px) rotateX(-5deg);
+    }
+    80% {
+        transform: perspective(200px) rotateX(5deg);
+    }
+    90% {
+        transform: perspective(200px) rotateX(-3deg);
+    }
+    95% {
+        transform: perspective(200px) rotateX(3deg);
+    }
+}
 
 .jj-list-link {
     display: block;
     background: rgba(230, 247, 255, 0.96);
     color:rgba(49, 70, 89, 1);
-    font-size: 55px;
+    font-size: 13px;
     text-align: center;
-    line-height: 110px;
+    line-height: 44px;
     transition: all 0.2s;
-    border-radius: 10px;
+    border-radius: 2px;
 }
 .jj-list-link:hover {
     background: #1890FF 100%;
-    font-size: 25px;
+    font-size: 18px;
     font-weight: bold;
     color: #fff;
 }
